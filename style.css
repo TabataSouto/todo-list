@@ -1,7 +1,29 @@
 body {
   text-align: center;
+  background-color: rgb(241 , 221 , 207);
+}
+
+h1 {
+  color: rgb(173 , 106 , 108);
+}
+
+p {
+  color: rgba(0 , 0 , 0 , 0.568);
+}
+
+main {
+  margin: auto;
+  background-color: rgb(208 , 173 , 167);
+  border: double 4px rgba(255 , 255 , 255 , 0.74);
+  width: 40%;
+  padding: 1px;
+  border-radius: 5px;
 }
 
 ol {
   display: inline-block;
+}
+
+input , button {
+  border: double 4px rgba(173 , 106 , 108 , 0.534);
 }
