@@ -3,25 +3,26 @@ const button = document.querySelector('#criar-tarefa');
 const inputTextoTarefa = document.querySelector('#texto-tarefa');
 const listaTarefas = document.querySelector('#lista-tarefas');
 
-// 1) capturar informação input e adi
+// a) capturar informação input e adi
 function addTarefa() {
-  // pegou o resultado do input
+  // b) pegar o resultado do input
   const inputValue = inputTextoTarefa.value;
 
-  // criou a li pra cada tarefa adiciona no ol que é o pai da li
+  // c) criar a li para adicionar cada tarefa como li (filho do ol)
   const liList = document.createElement('li');
 
-  // mudar a cor de fundo de cada li selecionado
+  // d) mudar a cor de fundo de cada li quando selecionado
   liList.addEventListener('click', function() {
     liList.style.backgroundColor = 'rgb(128, 128, 128)';
   });
 
-  // adiciona de fato o elemento com o valor de input do usuário na página
+  // e) adicionar de fato o elemento com o valor de input do usuário na página com a informação inputada do usuário
   liList.innerText = inputValue;
-  liList.classList = 'item';
   listaTarefas.appendChild(liList);
 
-  // ao clicar no botão "adicionar" a tarefa vai pra lista e some da caixa de input;
+// f) valor preenchido é apagado da caixa de texto ao clicar no botão de adicionar;
   inputTextoTarefa.value = '';
 }
 button.addEventListener('click', addTarefa);
+
+// PINTAR UMA TAREFA POR VEZ

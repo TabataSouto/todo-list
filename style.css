@@ -1,29 +1,38 @@
 body {
   text-align: center;
   background-color: rgb(241 , 221 , 207);
+  padding: 30px;
 }
 
 h1 {
   color: rgb(173 , 106 , 108);
 }
 
-p {
-  color: rgba(0 , 0 , 0 , 0.568);
+p , li {
+  color: rgba(53 , 53 , 53 , 0.87);
 }
 
 main {
   margin: auto;
   background-color: rgb(208 , 173 , 167);
   border: double 4px rgba(255 , 255 , 255 , 0.74);
-  width: 40%;
+  width: 500px;
   padding: 1px;
   border-radius: 5px;
 }
 
 ol {
   display: inline-block;
+  text-align: left;
 }
 
 input , button {
   border: double 4px rgba(173 , 106 , 108 , 0.534);
+  border-radius: 15px;
+  text-align: center;
+}
+
+#criar-tarefa {
+  color: rgb(173 , 106 , 108);
+  font-weight: 800;
 }
