@@ -3,32 +3,39 @@ const button = document.querySelector('#criar-tarefa');
 const inputTextoTarefa = document.querySelector('#texto-tarefa');
 const listaTarefas = document.querySelector('#lista-tarefas');
 
-// a) capturar informação input e adi
+// a) capturar informação input
+// b) pegar o resultado do input
+// c) criar a li para adicionar cada tarefa como li (filho do ol)
+// e) adicionar de fato o elemento com o valor de input do usuário na página com a informação inputada do usuário
+// f) função para mudar a cor do bg da tarefa selecionada
+// g) valor preenchido é apagado da caixa de texto ao clicar no botão de adicionar;
+
 function addTarefa() {
-  // b) pegar o resultado do input
   const inputValue = inputTextoTarefa.value;
-
-  // c) criar a li para adicionar cada tarefa como li (filho do ol)
   const liList = document.createElement('li');
-
-  // e) adicionar de fato o elemento com o valor de input do usuário na página com a informação inputada do usuário
   liList.innerText = inputValue;
 
-  // função para mudar a cor do bg da tarefa selecionada
   liList.addEventListener('click', addRemove);
-  listaTarefas.appendChild(liList);
+  liList.addEventListener('dblclick', riscarTarefa);
 
-  // f) valor preenchido é apagado da caixa de texto ao clicar no botão de adicionar;
+  listaTarefas.appendChild(liList);
   inputTextoTarefa.value = '';
 }
 button.addEventListener('click', addTarefa);
 
 // PINTAR UMA TAREFA POR VEZ
 function addRemove(event) {
-  const taskName = event.target;
+  const liList = event.target;
   const classSelected = document.querySelector('.selected');
   if (classSelected) {
     classSelected.classList.remove('selected');
   }
-  taskName.classList.add('selected');
+  liList.classList.add('selected');
+}
+
+// RISCAR A TAREFA CLICADA DUAS VEZES
+// referencia: @SrTonn para entendimento e realização do requisito
+function riscarTarefa(event) {
+  const liList = event.target;
+  liList.classList.toggle('completed');
 }
