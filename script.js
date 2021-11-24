@@ -2,6 +2,7 @@
 const button = document.querySelector('#criar-tarefa');
 const inputTextoTarefa = document.querySelector('#texto-tarefa');
 const listaTarefas = document.querySelector('#lista-tarefas');
+const buttonDelete = document.querySelector('#apaga-tudo');
 
 // a) capturar informação input
 // b) pegar o resultado do input
@@ -14,11 +15,10 @@ function addTarefa() {
   const inputValue = inputTextoTarefa.value;
   const liList = document.createElement('li');
   liList.innerText = inputValue;
-
   liList.addEventListener('click', addRemove);
   liList.addEventListener('dblclick', riscarTarefa);
-
   listaTarefas.appendChild(liList);
+  inputTextoTarefa.focus();
   inputTextoTarefa.value = '';
 }
 button.addEventListener('click', addTarefa);
@@ -39,3 +39,8 @@ function riscarTarefa(event) {
   const liList = event.target;
   liList.classList.toggle('completed');
 }
+
+// APAGAR TODAS AS TAREFAS
+buttonDelete.addEventListener('click', () => {
+  listaTarefas.innerHTML = '';
+});

@@ -17,7 +17,6 @@ main {
   background-color: rgb(208 , 173 , 167);
   border: double 4px rgba(255 , 255 , 255 , 0.74);
   width: 500px;
-  padding: 1px;
   border-radius: 5px;
 }
 
@@ -32,7 +31,7 @@ input , button {
   text-align: center;
 }
 
-#criar-tarefa {
+button {
   color: rgb(173 , 106 , 108);
   font-weight: 800;
 }
@@ -48,4 +47,8 @@ div {
 
 .completed {
   text-decoration: line-through solid black;
+}
+
+#apaga-tudo {
+  margin-bottom: 15px;
 }
