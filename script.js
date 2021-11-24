@@ -4,6 +4,7 @@ const inputTextoTarefa = document.querySelector('#texto-tarefa');
 const listaTarefas = document.querySelector('#lista-tarefas');
 const buttonDelete = document.querySelector('#apaga-tudo');
 const buttonRemFinal = document.querySelector('#remover-finalizados');
+const buttonRenSel = document.querySelector('#remover-selecionado');
 
 // a) capturar informação input
 // b) pegar o resultado do input
@@ -16,6 +17,7 @@ function addTarefa() {
   const inputValue = inputTextoTarefa.value;
   const liList = document.createElement('li');
   liList.innerText = inputValue;
+
   liList.addEventListener('click', addRemove);
   liList.addEventListener('dblclick', riscarTarefa);
   listaTarefas.appendChild(liList);
@@ -49,9 +51,15 @@ buttonDelete.addEventListener('click', () => {
 // APAGAR TAREFAS FINALIZADAS
 buttonRemFinal.addEventListener('click', () => {
   const tarefaCompleta = document.querySelectorAll('.completed');
-  // for (let i = 0; i < tarefaCompleta.length; i += 1) {
-  //   tarefaCompleta[i].remove();
-  tarefaCompleta.forEach((index) => {
-    index.remove();
+  tarefaCompleta.forEach((element) => {
+    element.remove();
+  });
+});
+
+// REMOVER SELECIONADO;
+buttonRenSel.addEventListener('click', () => {
+  const tarefaSelecionada = document.querySelectorAll('.selected');
+  tarefaSelecionada.forEach((element) => {
+    element.remove();
   });
 });
