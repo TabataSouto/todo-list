@@ -49,7 +49,9 @@ buttonDelete.addEventListener('click', () => {
 // APAGAR TAREFAS FINALIZADAS
 buttonRemFinal.addEventListener('click', () => {
   const tarefaCompleta = document.querySelectorAll('.completed');
-  for (let i = 0; i < tarefaCompleta.length; i += 1) {
-    tarefaCompleta[i].remove();
-  }
+  // for (let i = 0; i < tarefaCompleta.length; i += 1) {
+  //   tarefaCompleta[i].remove();
+  tarefaCompleta.forEach((index) => {
+    index.remove();
+  });
 });
