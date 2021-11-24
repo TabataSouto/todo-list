@@ -58,8 +58,6 @@ buttonRemFinal.addEventListener('click', () => {
 
 // REMOVER SELECIONADO;
 buttonRenSel.addEventListener('click', () => {
-  const tarefaSelecionada = document.querySelectorAll('.selected');
-  tarefaSelecionada.forEach((element) => {
-    element.remove();
-  });
+  const tarefaSelecionada = document.querySelector('.selected');
+  tarefaSelecionada.remove();
 });
