@@ -3,6 +3,7 @@ const button = document.querySelector('#criar-tarefa');
 const inputTextoTarefa = document.querySelector('#texto-tarefa');
 const listaTarefas = document.querySelector('#lista-tarefas');
 const buttonDelete = document.querySelector('#apaga-tudo');
+const buttonRemFinal = document.querySelector('#remover-finalizados');
 
 // a) capturar informação input
 // b) pegar o resultado do input
@@ -43,4 +44,12 @@ function riscarTarefa(event) {
 // APAGAR TODAS AS TAREFAS
 buttonDelete.addEventListener('click', () => {
   listaTarefas.innerHTML = '';
+});
+
+// APAGAR TAREFAS FINALIZADAS
+buttonRemFinal.addEventListener('click', () => {
+  const tarefaCompleta = document.querySelectorAll('.completed');
+  for (let i = 0; i < tarefaCompleta.length; i += 1) {
+    tarefaCompleta[i].remove();
+  }
 });
