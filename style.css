@@ -36,3 +36,12 @@ input , button {
   color: rgb(173 , 106 , 108);
   font-weight: 800;
 }
+
+div {
+  text-align: left;
+  margin: 0 70px;
+}
+
+.selected {
+  background-color: gray;
+}
