@@ -111,3 +111,4 @@ function getTarefas() {
   const get = localStorage.getItem('tarefas');
   listaTarefas.innerHTML = get;
 }
+getTarefas();
