@@ -87,6 +87,7 @@ buttonMoverBaixo.addEventListener('click', () => {
   // recuperar o li selecionado
   const classSelected = document.querySelector('.selected');
   // se o li não tiver a classe .selected irá retornar "nulo";
+  // Referência: https://pt.stackoverflow.com/questions/455667/o-que-%C3%A9-uma-guard-clause ;
   if (!classSelected) return;
   // se meu elemento selecionado(alguma li) for diferente que o pai(ol).filho na última posição;
   if (classSelected !== listaTarefas.lastChild) {
@@ -110,5 +111,7 @@ buttonSalTar.addEventListener('click', () => {
 function getTarefas() {
   const get = localStorage.getItem('tarefas');
   listaTarefas.innerHTML = get;
+  listaTarefas.addEventListener('click', addRemove);
+  listaTarefas.addEventListener('dblclick', riscarTarefa);
 }
 getTarefas();
